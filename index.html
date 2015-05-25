@@ -9,53 +9,6 @@
         <link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet"
         />
         <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />
-        <script>
-			function getUrlParameter(sParam)
-			{
-				var sPageURL = window.location.search.substring(1);
-				var sURLVariables = sPageURL.split('&');
-				for (var i = 0; i < sURLVariables.length; i++) 
-				{
-					var sParameterName = sURLVariables[i].split('=');
-					if (sParameterName[0] == sParam) 
-					{
-						return sParameterName[1];
-					}
-				}
-			}          
-			$.ajaxSetup ({
-				// Disable caching of AJAX responses
-				cache: false
-			});
-			//$('form').on('submit',function(e){
-				//e.preventDefault();
-				var usernamex = getUrlParameter('username');
-				var password = getUrlParameter('pass');
-				$.ajax({
-					type       : "GET",
-					url        : "http://arisis.my.id/jsonp/index.php",
-					data       : {username : usernamex , password : password},
-					jsonpCallback   : "oncex",
-					dataType   : 'jsonp',
-					success    : function(response) {
-						$('#setuju').css('display','none');
-						if(response.hasil !== 'gagal'){
-							hasile = '<div class="ui-bar ui-bar-a ui-corner-all"><h3>'+response.username+'</h3></div><p>'+ response.password +'<p>';
-							
-							$('#content').html(hasile);
-						}
-						else{
-							hasile = '<p>'+ response.gagalnya +'<p>';
-							$('#content').html(hasile);
-						}
-					},
-					error      : function() {
-						console.error("error");
-						alert('Not working!');                  
-					}
-				});
-		//	});
-        </script>
     </head>
     
     <body>
@@ -64,12 +17,18 @@
                 <h1>L O G I N</h1>
             </div>
             <div data-role="content">
-				<span id="setuju">
-					Dengan Mengklik Button Lanjutkan Anda Segera Terhubung Ke Server 
-					<button onclick="location.reload();">Lanjutkan </button>
-				</span>
-                <div id="content">
-                </div>
+                <img src="" style="display: block; margin: 0 auto" />
+                <form action="login.html" method="GET">
+                    <div data-role="fieldcontain">
+                        <label for="text1">NRP</label>
+                        <input type="text" name="username" id="text1" data-mini="true" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="text2">Password</label>
+                        <input type="password" name="pass" id="text2" data-mini="true" />
+                    </div>
+                    <button type="submit" data-role="button" data-rel="page" data-iconpos="right" data-theme="b">Login</button>
+                </form>
             </div>
         </div>
     </body>
