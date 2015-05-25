@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <title>title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="lib/jquery-1.6.4.js"></script>
+        <script src="lib/jquery.mobile-1.1.0.js"></script>
+        <link href="src/css/jquery.mobile.structure-1.1.0.css" rel="stylesheet"
+        />
+        <link href="src/css/jquery.mobile.theme-1.1.0.css" rel="stylesheet" />
+    </head>
+    
+    <body>
+        <div data-role="page" id="page1">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <h1>L O G I N</h1>
+            </div>
+            <div data-role="content">
+                <img src="" style="display: block; margin: 0 auto" />
+                <form action="index.html" method="GET">
+                    <div data-role="fieldcontain">
+                        <label for="text1">NRP</label>
+                        <input type="text" name="username" id="text1" data-mini="true" />
+                    </div>
+                    <div data-role="fieldcontain">
+                        <label for="text2">Password</label>
+                        <input type="password" name="pass" id="text2" data-mini="true" />
+                    </div>
+                    <button type="submit" data-role="button" data-rel="page" data-iconpos="right" data-theme="b">Login</button>
+                </form>
+            </div>
+        </div>
+    </body>
+
+</html>
